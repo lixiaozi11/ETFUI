@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using YooAsset;
 
 namespace ET
 {
@@ -7,19 +9,19 @@ namespace ET
     {
         public void GetAllConfigBytes(Dictionary<string, byte[]> output)
         {
-            Dictionary<string, UnityEngine.Object> keys = ResourcesComponent.Instance.GetBundleAll("config.unity3d");
-
-            foreach (var kv in keys)
+            AllAssetsHandle allAssetsHandle = YooAssets.LoadAllAssetsSync<UnityEngine.TextAsset>("StartMachineConfigCategory");
+            foreach(var obj in allAssetsHandle.AllAssetObjects)
             {
-                TextAsset v = kv.Value as TextAsset;
-                string key = kv.Key;
-                output[key] = v.bytes;
+                UnityEngine.TextAsset textAsset = obj as UnityEngine.TextAsset;
+                output[textAsset.name] = textAsset.bytes;
             }
+            allAssetsHandle.Release();
         }
 
         public byte[] GetOneConfigBytes(string configName)
         {
-            TextAsset v = ResourcesComponent.Instance.GetAsset("config.unity3d", configName) as TextAsset;
+            AssetHandle assetHandle = YooAssets.LoadAssetSync(configName);
+            TextAsset v =assetHandle.AssetObject as TextAsset;
             return v.bytes;
         }
     }

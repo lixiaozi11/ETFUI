@@ -1,0 +1,164 @@
+{
+    "FileVersion": "2.0.0",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": true,
+    "OutputNameStyle": 2,
+    "BuildPipeline": "BuiltinBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "2024-04-26-1240",
+    "AssetList": [
+        {
+            "Address": "AIConfigCategory",
+            "AssetPath": "Assets/Bundles/Config/AIConfigCategory.bytes",
+            "AssetGUID": "277d58db3067742a7b32f9994984b3bc",
+            "AssetTags": [],
+            "BundleID": 0
+        },
+        {
+            "Address": "StartMachineConfigCategory",
+            "AssetPath": "Assets/Bundles/Config/StartMachineConfigCategory.bytes",
+            "AssetGUID": "40aebe92b34144ab187964caf41b2104",
+            "AssetTags": [],
+            "BundleID": 0
+        },
+        {
+            "Address": "StartProcessConfigCategory",
+            "AssetPath": "Assets/Bundles/Config/StartProcessConfigCategory.bytes",
+            "AssetGUID": "f62068aa635af4f189781cb7900fa538",
+            "AssetTags": [],
+            "BundleID": 0
+        },
+        {
+            "Address": "StartSceneConfigCategory",
+            "AssetPath": "Assets/Bundles/Config/StartSceneConfigCategory.bytes",
+            "AssetGUID": "f5aaffc264fbd427f907e6180178fa65",
+            "AssetTags": [],
+            "BundleID": 0
+        },
+        {
+            "Address": "StartZoneConfigCategory",
+            "AssetPath": "Assets/Bundles/Config/StartZoneConfigCategory.bytes",
+            "AssetGUID": "2f76d9d7f3caf49b89a8292eb2ee302c",
+            "AssetTags": [],
+            "BundleID": 0
+        },
+        {
+            "Address": "UnitConfigCategory",
+            "AssetPath": "Assets/Bundles/Config/UnitConfigCategory.bytes",
+            "AssetGUID": "3f452063ceb5f4150bbbfe795c0aca90",
+            "AssetTags": [],
+            "BundleID": 0
+        },
+        {
+            "Address": "GlobalConfig",
+            "AssetPath": "Assets/Bundles/GlobalConfig/GlobalConfig.asset",
+            "AssetGUID": "8aeca13b5b9b30549910133668050899",
+            "AssetTags": [],
+            "BundleID": 1
+        },
+        {
+            "Address": "mscorlib.dll",
+            "AssetPath": "Assets/Bundles/AotCode/mscorlib.dll.bytes",
+            "AssetGUID": "b0857a6ea1333074b99446f716674ee2",
+            "AssetTags": [
+                "aotdll"
+            ],
+            "BundleID": 2
+        },
+        {
+            "Address": "System.Core.dll",
+            "AssetPath": "Assets/Bundles/AotCode/System.Core.dll.bytes",
+            "AssetGUID": "abf5b445f83514d4b8404e263765994f",
+            "AssetTags": [
+                "aotdll"
+            ],
+            "BundleID": 2
+        },
+        {
+            "Address": "System.dll",
+            "AssetPath": "Assets/Bundles/AotCode/System.dll.bytes",
+            "AssetGUID": "d34db3b39e2b95141b64975dadf74b6c",
+            "AssetTags": [
+                "aotdll"
+            ],
+            "BundleID": 2
+        },
+        {
+            "Address": "Unity.Mono.dll",
+            "AssetPath": "Assets/Bundles/AotCode/Unity.Mono.dll.bytes",
+            "AssetGUID": "a76ce4da1517d2243bca3b923a8459f3",
+            "AssetTags": [
+                "aotdll"
+            ],
+            "BundleID": 2
+        },
+        {
+            "Address": "Unity.ThirdParty.dll",
+            "AssetPath": "Assets/Bundles/AotCode/Unity.ThirdParty.dll.bytes",
+            "AssetGUID": "efc76e1db2d0ded4492f33fb5eb0bd1c",
+            "AssetTags": [
+                "aotdll"
+            ],
+            "BundleID": 2
+        },
+        {
+            "Address": "Code.dll",
+            "AssetPath": "Assets/Bundles/Code/Code.dll.bytes",
+            "AssetGUID": "a5cc51a2d3066e947a8001a597b064ef",
+            "AssetTags": [],
+            "BundleID": 3
+        },
+        {
+            "Address": "Code.pdb",
+            "AssetPath": "Assets/Bundles/Code/Code.pdb.bytes",
+            "AssetGUID": "5d30846922f154340825c6487abc5b49",
+            "AssetTags": [],
+            "BundleID": 3
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "defaultpackage_assets_bundles_config.bundle",
+            "UnityCRC": 1522102709,
+            "FileHash": "4001a7f50349c8c78b84c2febbecd724",
+            "FileCRC": "7e108f47",
+            "FileSize": 1806,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_bundles_globalconfig.bundle",
+            "UnityCRC": 240751758,
+            "FileHash": "6361f6ebd8cfed036ee13f7955030c56",
+            "FileCRC": "b7cb5a99",
+            "FileSize": 1810,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_bundles_aotcode.bundle",
+            "UnityCRC": 113812678,
+            "FileHash": "af99ae7b27ceb061dfe61f4180ff3847",
+            "FileCRC": "5930781e",
+            "FileSize": 3143221,
+            "Encrypted": false,
+            "Tags": [
+                "aotdll"
+            ],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_bundles_code.bundle",
+            "UnityCRC": 117530128,
+            "FileHash": "52f8c2f23114cdfb4588724acad557c3",
+            "FileCRC": "5e0c2014",
+            "FileSize": 201449,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        }
+    ]
+}

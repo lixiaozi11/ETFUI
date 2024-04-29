@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 3072345298
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: defaultpackage_assets_bundles_config.bundle
+      Dependencies: {}
+    Info_1:
+      Name: defaultpackage_assets_bundles_globalconfig.bundle
+      Dependencies: {}
+    Info_2:
+      Name: defaultpackage_assets_bundles_aotcode.bundle
+      Dependencies: {}
+    Info_3:
+      Name: defaultpackage_assets_bundles_code.bundle
+      Dependencies: {}

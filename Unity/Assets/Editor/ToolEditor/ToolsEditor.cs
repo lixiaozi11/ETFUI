@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿using System.IO;
+using UnityEditor;
+using UnityEngine;
 
 namespace ET
 {
@@ -25,5 +27,8 @@ namespace ET
 #endif
             ShellHelper.Run($"{tools} --AppType=Proto2CS --Console=1", "../Bin/");
         }
+
+        
+
     }
 }

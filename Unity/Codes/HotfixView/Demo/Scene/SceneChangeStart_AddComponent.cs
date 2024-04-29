@@ -10,9 +10,10 @@ namespace ET
         private async ETTask RunAsync(EventType.SceneChangeStart args)
         {
             Scene currentScene = args.ZoneScene.CurrentScene();
-            
+
             // 加载场景资源
-            await ResourcesComponent.Instance.LoadBundleAsync($"{currentScene.Name}.unity3d");
+            //await ResourcesComponent.Instance.LoadBundleAsync($"{currentScene.Name}.unity3d");
+            await YooAssetHandleComponent.Instance.LoadSceneAsync(currentScene.Name);
             // 切换到map场景
 
             SceneChangeComponent sceneChangeComponent = null;
@@ -27,7 +28,7 @@ namespace ET
             {
                 sceneChangeComponent?.Dispose();
             }
-			
+
 
             currentScene.AddComponent<OperaComponent>();
         }

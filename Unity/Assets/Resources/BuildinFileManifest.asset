@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3195e664393cd234ca2bea278b28bc64, type: 3}
+  m_Name: BuildinFileManifest
+  m_EditorClassIdentifier: 
+  BuildinFiles:
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_assets_bundles_aotcode_47b2dae4952105f5f7a7a31394346550.bundle
+    FileCRC32: 5715beb7
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_assets_bundles_atlas_common_71b56f185fc153cd483623e3f7bc9d13.bundle
+    FileCRC32: b9232744
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_assets_bundles_code_19bdbbf1b641f354b9a343dcf05ab565.bundle
+    FileCRC32: 3cf6f146
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_assets_bundles_config_497cdb119a6ba2245f0b8e07962cc87b.bundle
+    FileCRC32: 52536368
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_assets_bundles_globalconfig_298cd81d03812f8055dd8af87c97ac4d.bundle
+    FileCRC32: 11697858

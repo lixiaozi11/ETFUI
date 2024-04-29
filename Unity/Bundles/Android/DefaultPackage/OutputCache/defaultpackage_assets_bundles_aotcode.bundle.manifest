@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 1324163792
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e2bc4c5335d85abe6bc4a3c6bb91b334
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/AotCode/System.Core.dll.bytes
+- Assets/Bundles/AotCode/System.dll.bytes
+- Assets/Bundles/AotCode/Unity.ThirdParty.dll.bytes
+- Assets/Bundles/AotCode/mscorlib.dll.bytes
+- Assets/Bundles/AotCode/Unity.Mono.dll.bytes
+Dependencies: []

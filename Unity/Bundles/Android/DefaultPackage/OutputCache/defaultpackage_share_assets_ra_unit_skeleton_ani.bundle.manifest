@@ -1,0 +1,33 @@
+ManifestFileVersion: 0
+CRC: 3666557787
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 40baa31e8f47f92dad8bd8c6e2ea698a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b6250456b0270a043be74ee2bcf3a735
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Ra/Unit/Skeleton/Ani/Skeleton@Idle.FBX
+- Assets/Ra/Unit/Skeleton/Ani/Skeleton@Run.FBX
+Dependencies:
+- E:/GITHUB/ET-FUI/Unity/Bundles/Android/DefaultPackage/OutputCache/defaultpackage_share_assets_ra_unit_skeleton_ani_materials.bundle

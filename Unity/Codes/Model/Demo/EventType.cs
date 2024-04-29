@@ -69,7 +69,7 @@ namespace ET
             public Scene LoginScene;
         }
 
-        public struct AppStartInitFinish
+        public struct HotUpdate
         {
             public Scene ZoneScene;
         }

@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 258933092
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 812819b5b51c6036261ef7bfbdcefed9
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1bd01ea63611ce9a14a32e55b05f8dfd
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Ra/Unit/Skeleton/SkeletonController.controller
+- Assets/Ra/Unit/Skeleton/Skeleton.prefab
+Dependencies:
+- E:/GITHUB/ET-FUI/Unity/Bundles/Android/DefaultPackage/OutputCache/defaultpackage_share_assets_ra_unit_skeleton_ani.bundle
+- E:/GITHUB/ET-FUI/Unity/Bundles/Android/DefaultPackage/OutputCache/defaultpackage_share_assets_ra_unit_skeleton_ani_materials.bundle

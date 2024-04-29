@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 4191821768
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b02e1252f4184b0c887c14fc750a11c5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ba740a701dfcd3eaa22374d723b44054
+HashAppended: 0
+ClassTypes:
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Atlas/Common/Sword.png
+- Assets/Bundles/Atlas/Common/HealthWater.png
+- Assets/Bundles/Atlas/Common/Gold.gif
+- Assets/Bundles/Atlas/Common/Axe.png
+- Assets/Bundles/Atlas/Common/Silver.gif
+- Assets/Bundles/Atlas/Common/Shield.gif
+Dependencies: []

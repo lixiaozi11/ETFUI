@@ -76,7 +76,7 @@ namespace ET
 
 			lock (self)
 			{
-				self.AllConfig[configType] = category;	
+				self.AllConfig[configType] = category;
 			}
 		}
 	}

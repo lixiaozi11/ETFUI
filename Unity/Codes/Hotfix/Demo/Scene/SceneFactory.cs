@@ -10,8 +10,9 @@ namespace ET
 			zoneScene.AddComponent<CurrentScenesComponent>();
             zoneScene.AddComponent<ObjectWait>();
             zoneScene.AddComponent<PlayerComponent>();
-            
-            Game.EventSystem.Publish(new EventType.AfterCreateZoneScene() {ZoneScene = zoneScene});
+
+            Game.EventSystem.Publish(new EventType.HotUpdate() { ZoneScene = zoneScene });
+
             return zoneScene;
         }
         

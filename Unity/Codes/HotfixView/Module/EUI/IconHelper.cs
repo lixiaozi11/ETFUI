@@ -19,9 +19,12 @@ namespace ET
         {
             try
             {
-                ResourcesComponent.Instance.LoadBundle(atlasName.StringToAB());
-                SpriteAtlas spriteAtlas = ResourcesComponent.Instance.GetAsset(atlasName.StringToAB(),atlasName) as SpriteAtlas ;
-                Sprite sprite = spriteAtlas.GetSprite(spriteName);
+                //ResourcesComponent.Instance.LoadBundle(atlasName.StringToAB());
+                //SpriteAtlas spriteAtlas = ResourcesComponent.Instance.GetAsset(atlasName.StringToAB(),atlasName) as SpriteAtlas ;
+                //Sprite sprite = spriteAtlas.GetSprite(spriteName);
+
+                Sprite sprite = YooAssetHandleComponent.Instance.LoadSubAsset<Sprite>(spriteName) ;
+
                 if ( null == sprite )
                 {
                     Log.Error($"sprite is null: {spriteName}");
@@ -44,9 +47,12 @@ namespace ET
         {
             try
             {
-                await ResourcesComponent.Instance.LoadBundleAsync(atlasName.StringToAB());
-                SpriteAtlas spriteAtlas = ResourcesComponent.Instance.GetAsset(atlasName.StringToAB(),atlasName) as SpriteAtlas ;
-                Sprite sprite = spriteAtlas.GetSprite(spriteName);
+                //await ResourcesComponent.Instance.LoadBundleAsync(atlasName.StringToAB());
+                //SpriteAtlas spriteAtlas = ResourcesComponent.Instance.GetAsset(atlasName.StringToAB(),atlasName) as SpriteAtlas ;
+                //Sprite sprite = spriteAtlas.GetSprite(spriteName);
+
+                Sprite sprite = await YooAssetHandleComponent.Instance.LoadSubAssetAsync<Sprite>(spriteName);
+
                 if (null == sprite)
                 {
                     Log.Error($"sprite is null: {spriteName}");

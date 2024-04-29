@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using UnityEngine;
 using System.Linq;
+using HybridCLR;
 
 namespace ET
 {
@@ -11,11 +12,12 @@ namespace ET
 	{
 		public static CodeLoader Instance = new CodeLoader();
 
-		public Action Update;
-		public Action LateUpdate;
+		public Action Update = delegate{ };
+		public Action LateUpdate = delegate{ };
 		public Action OnApplicationQuit;
 
 		private Assembly assembly;
+
 		
 		public CodeMode CodeMode { get; set; }
 		
@@ -56,21 +58,16 @@ namespace ET
 			this.appDomain?.Dispose();
 		}
 		
-		public void Start()
+		public async void Start()
 		{
 			switch (this.CodeMode)
 			{
 				case CodeMode.Mono:
 				{
-					(AssetBundle assetsBundle, Dictionary<string, UnityEngine.Object> dictionary) = AssetsBundleHelper.LoadBundle("code.unity3d");
-					byte[] assBytes = ((TextAsset)dictionary["Code.dll"]).bytes;
-					byte[] pdbBytes = ((TextAsset)dictionary["Code.pdb"]).bytes;
-					
-					if (assetsBundle != null)
-					{
-						assetsBundle.Unload(true);	
-					}
-					
+
+					byte[] assBytes = await YooAssetResComponent.Instance.LoadTextAssetAsync("Code.dll");
+					byte[] pdbBytes = await YooAssetResComponent.Instance.LoadTextAssetAsync("Code.pdb");
+
 					assembly = Assembly.Load(assBytes, pdbBytes);
 					foreach (Type type in this.assembly.GetTypes())
 					{
@@ -126,14 +123,45 @@ namespace ET
 					start.Run();
 					break;
 				}
-			}
-		}
+                case CodeMode.HybridCLR:
+                {
+					System.Runtime.Serialization.IgnoreDataMemberAttribute ignoreDataMemberAttribute;
+                    byte[] assBytes = await YooAssetResComponent.Instance.LoadTextAssetAsync("Code.dll");
+					byte[] pdbBytes = await YooAssetResComponent.Instance.LoadTextAssetAsync("Code.pdb");
 
-		// 热重载调用下面三个方法
-		// CodeLoader.Instance.LoadLogic();
-		// Game.EventSystem.Add(CodeLoader.Instance.GetTypes());
-		// Game.EventSystem.Load();
-		public void LoadLogic()
+					LoadMetadataForAOTAssemblies("aotdll");
+
+                    assembly = Assembly.Load(assBytes, pdbBytes);
+                    foreach (Type type in this.assembly.GetTypes())
+                    {
+                        this.monoTypes[type.FullName] = type;
+                        this.hotfixTypes[type.FullName] = type;
+                    }
+                    IStaticMethod start = new MonoStaticMethod(assembly, "ET.Entry", "Start");
+                    start.Run();
+                    break;
+                }
+            }
+		}
+        private static void LoadMetadataForAOTAssemblies(string aotTag)
+        {
+            /// 注意，补充元数据是给AOT dll补充元数据，而不是给热更新dll补充元数据。
+            /// 热更新dll不缺元数据，不需要补充，如果调用LoadMetadataForAOTAssembly会返回错误
+            /// 
+            HomologousImageMode mode = HomologousImageMode.SuperSet;
+            foreach (var aotDllLocation in YooAssetResComponent.Instance.GetAssetLocationsByTag(aotTag))
+            {
+                byte[] dllBytes = YooAssetResComponent.Instance.LoadTextAsset(aotDllLocation);
+                // 加载assembly对应的dll，会自动为它hook。一旦aot泛型函数的native函数不存在，用解释器版本代码
+                LoadImageErrorCode err = RuntimeApi.LoadMetadataForAOTAssembly(dllBytes, mode);
+                Debug.Log($"LoadMetadataForAOTAssembly:{aotDllLocation}. mode:{mode} ret:{err}");
+            }
+        }
+        // 热重载调用下面三个方法
+        // CodeLoader.Instance.LoadLogic();
+        // Game.EventSystem.Add(CodeLoader.Instance.GetTypes());
+        // Game.EventSystem.Load();
+        public void LoadLogic()
 		{
 			if (this.CodeMode != CodeMode.Reload)
 			{

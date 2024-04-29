@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 862952058
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d74f3211e76c97cb214dd48de46638a7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4a124a79f3cd96c32e82437ed953faa0
+HashAppended: 0
+ClassTypes:
+- Class: 850595691
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Scenes/Map2Settings.lighting
+- Assets/Scenes/Map1Settings.lighting
+Dependencies: []

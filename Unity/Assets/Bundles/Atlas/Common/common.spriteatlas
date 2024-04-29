@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: common
+  m_Name: Assets/Bundles/Atlas/Common/common.spriteatlas
   serializedVersion: 2
   m_EditorData:
     serializedVersion: 2
@@ -53,6 +53,6 @@ SpriteAtlas:
   - Sword
   - Silver
   m_RenderDataMap: {}
-  m_Tag: common
+  m_Tag: Assets/Bundles/Atlas/Common/common.spriteatlas
   m_IsVariant: 0
   m_IsPlaceholder: 0

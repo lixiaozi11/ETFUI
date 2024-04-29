@@ -188,12 +188,12 @@ namespace ET
             Debug.Log("copy Code.dll to Bundles/Code success!");
             
             // 设置ab包
-            AssetImporter assetImporter1 = AssetImporter.GetAtPath("Assets/Bundles/Code/Code.dll.bytes");
-            assetImporter1.assetBundleName = "Code.unity3d";
-            AssetImporter assetImporter2 = AssetImporter.GetAtPath("Assets/Bundles/Code/Code.pdb.bytes");
-            assetImporter2.assetBundleName = "Code.unity3d";
-            AssetDatabase.Refresh();
-            Debug.Log("set assetbundle success!");
+            //AssetImporter assetImporter1 = AssetImporter.GetAtPath("Assets/Bundles/Code/Code.dll.bytes");
+            //assetImporter1.assetBundleName = "Code.unity3d";
+            //AssetImporter assetImporter2 = AssetImporter.GetAtPath("Assets/Bundles/Code/Code.pdb.bytes");
+            //assetImporter2.assetBundleName = "Code.unity3d";
+            //AssetDatabase.Refresh();
+            //Debug.Log("set assetbundle success!");
             
             Debug.Log("build success!");
             //反射获取当前Game视图，提示编译完成

@@ -1,5 +1,7 @@
-﻿using System.Threading;
+﻿using System.Collections;
+using System.Threading;
 using UnityEngine;
+using YooAsset;
 
 namespace ET
 {
@@ -9,26 +11,30 @@ namespace ET
 		Mono = 1,
 		ILRuntime = 2,
 		Reload = 3,
+		HybridCLR = 4,
 	}
 	
 	public class Init: MonoBehaviour
 	{
-		public CodeMode CodeMode = CodeMode.Mono;
+        public EPlayMode playMode = EPlayMode.EditorSimulateMode;
+
+        public CodeMode CodeMode = CodeMode.Mono;
 		
 		private void Awake()
 		{
 #if ENABLE_IL2CPP
-			this.CodeMode = CodeMode.ILRuntime;
+			//this.CodeMode = CodeMode.ILRuntime;
+			//this.CodeMode = CodeMode.HybridCLR;
 #endif
-			
 			System.AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
 			{
 				Log.Error(e.ExceptionObject.ToString());
 			};
+
+			DontDestroyOnLoad(gameObject);
 			
 			SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
 			
-			DontDestroyOnLoad(gameObject);
 			
 			LitJson.UnityTypeBindings.Register();
 
@@ -43,12 +49,36 @@ namespace ET
 			Options.Instance.LogLevel = 0;
 		}
 
-		private void Start()
-		{
-			CodeLoader.Instance.Start();
-		}
+        public void Restart()
+        {
+			Log.Info("Restart!");
+			CodeLoader.Instance.OnApplicationQuit();
+			CodeLoader.Instance.Dispose();
 
-		private void Update()
+            SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
+
+
+            //LitJson.UnityTypeBindings.Register();
+
+            //Log.ILog = new UnityLogger();
+
+            //Options.Instance = new Options();
+
+            CodeLoader.Instance.CodeMode = this.CodeMode;
+            Options.Instance.Develop = 1;
+            Options.Instance.LogLevel = 0;
+
+            CodeLoader.Instance.Start();
+        }
+
+        private IEnumerator Start()
+		{
+            yield return YooAssetResComponent.Instance.InitYooAssetAsync(playMode);
+            CodeLoader.Instance.Start();
+
+        }
+
+        private void Update()
 		{
 			CodeLoader.Instance.Update();
 		}
