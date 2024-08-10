@@ -1,14 +1,17 @@
-# ET-EUI
-基于ET框架的简单UI模块
+# ETFUI
+基于ET6.0的简单拓展
 
-#### 教程视频
-- [01-EUI介绍与UI控件获取](https://www.bilibili.com/video/BV12F411e7bP?share_source=copy_web) 
-
-- [02-EUI的公共UI的创建与使用](https://www.bilibili.com/video/BV1VP4y137Ah?share_source=copy_web)   
-
-- [03-EUI的循环列表的创建与使用](https://www.bilibili.com/video/BV1UF411z7uu?share_source=copy_web)   
-
-- [04-EUI的红点组件的创建与使用](https://www.bilibili.com/video/BV1KL4y1p7eh?share_source=copy_web) 
+#### 参考
+- [ET](https://github.com/egametang/ET)
+- [ET-EUI](https://github.com/zzjfengqing/ET-EUI)
+- [ET-YIUI](https://github.com/LiShengYang-yiyi/YIUI/tree/YIUI-ET7.2)
+- [ETPro](https://github.com/526077247/ETPro)
+- [X-ET7](https://github.com/IcePower/X-ET7)
+- [DCET](https://github.com/DukeChiang/DCET)
+- [HybridCLR](https://github.com/focus-creative-games/hybridclr)
+- [YooAsset](https://github.com/tuyoogame/YooAsset)
+- [Luban](https://github.com/focus-creative-games/luban)
+- [FairyGUI](https://www.fairygui.com/)
 
 #### 模块特点
  - 完全符合ET框架编码规范，逻辑层与显示层进行分离，代码简洁可阅读性强
