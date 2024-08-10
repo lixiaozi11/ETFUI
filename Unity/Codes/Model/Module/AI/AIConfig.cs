@@ -17,9 +17,9 @@ namespace ET
 			return this.AIConfigs[aiConfigId];
 		}
 		
-		public override void AfterEndInit()
+		partial void AfterEndInit()
 		{
-			foreach (var kv in this.GetAll())
+			foreach (var kv in this.dict)
 			{
 				SortedDictionary<int, AIConfig> aiNodeConfig;
 				if (!this.AIConfigs.TryGetValue(kv.Value.AIConfigId, out aiNodeConfig))

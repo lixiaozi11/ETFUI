@@ -22,6 +22,17 @@ struct VirtualActionInvoker1
 		((Action)invokeData.methodPtr)(obj, p1, invokeData.method);
 	}
 };
+template <typename T1, typename T2>
+struct VirtualActionInvoker2
+{
+	typedef void (*Action)(void*, T1, T2, const RuntimeMethod*);
+
+	static inline void Invoke (Il2CppMethodSlot slot, RuntimeObject* obj, T1 p1, T2 p2)
+	{
+		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
+		((Action)invokeData.methodPtr)(obj, p1, p2, invokeData.method);
+	}
+};
 template <typename R>
 struct VirtualFuncInvoker0
 {
@@ -1012,6 +1023,10 @@ struct InterpretedFrame_tF030A9AC78837B1C2F9CD54B43F7A04D85A8D92D;
 struct Interpreter_t510C725E2D3A23536CE8C5473739825931F710D1;
 // System.InvalidOperationException
 struct InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB;
+// SimpleJSON.JSONLazyCreator
+struct JSONLazyCreator_t920EEA3C14EC4CD5997502FE53A8D2528E5A880F;
+// SimpleJSON.JSONNode
+struct JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C;
 // LitJson.JsonReader
 struct JsonReader_t3F666BFA1A2DDF264F889F9A8CD6B365867D5754;
 // LitJson.JsonWriter
@@ -3097,6 +3112,39 @@ struct InterpretedFrame_tF030A9AC78837B1C2F9CD54B43F7A04D85A8D92D_ThreadStaticFi
 	InterpretedFrame_tF030A9AC78837B1C2F9CD54B43F7A04D85A8D92D* ___s_currentFrame_0;
 };
 
+// SimpleJSON.JSONNode
+struct JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C  : public RuntimeObject
+{
+};
+
+struct JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C_StaticFields
+{
+	// System.Boolean SimpleJSON.JSONNode::forceASCII
+	bool ___forceASCII_0;
+	// System.Boolean SimpleJSON.JSONNode::longAsString
+	bool ___longAsString_1;
+	// System.Boolean SimpleJSON.JSONNode::allowLineComments
+	bool ___allowLineComments_2;
+	// System.Byte SimpleJSON.JSONNode::Color32DefaultAlpha
+	uint8_t ___Color32DefaultAlpha_4;
+	// System.Single SimpleJSON.JSONNode::ColorDefaultAlpha
+	float ___ColorDefaultAlpha_5;
+	// SimpleJSON.JSONContainerType SimpleJSON.JSONNode::VectorContainerType
+	int32_t ___VectorContainerType_6;
+	// SimpleJSON.JSONContainerType SimpleJSON.JSONNode::QuaternionContainerType
+	int32_t ___QuaternionContainerType_7;
+	// SimpleJSON.JSONContainerType SimpleJSON.JSONNode::RectContainerType
+	int32_t ___RectContainerType_8;
+	// SimpleJSON.JSONContainerType SimpleJSON.JSONNode::ColorContainerType
+	int32_t ___ColorContainerType_9;
+};
+
+struct JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C_ThreadStaticFields
+{
+	// System.Text.StringBuilder SimpleJSON.JSONNode::m_EscapeBuilder
+	StringBuilder_t* ___m_EscapeBuilder_3;
+};
+
 // System.Runtime.CompilerServices.JitHelpers
 struct JitHelpers_t15439654973DBC6512239BD04D2E0A3E0EDCCE62  : public RuntimeObject
 {
@@ -3960,28 +4008,6 @@ struct NativeArray_1_tB64676789FBC7DC3DA7BB2D7765883A285CA6065
 
 // Unity.Collections.NativeArray`1<UnityEngine.Rendering.Universal.DecalSubDrawCall>
 struct NativeArray_1_t197AED29D4CF7A6BC8C6C69B7BABD82BDC8475E2 
-{
-	// System.Void* Unity.Collections.NativeArray`1::m_Buffer
-	void* ___m_Buffer_0;
-	// System.Int32 Unity.Collections.NativeArray`1::m_Length
-	int32_t ___m_Length_1;
-	// Unity.Collections.Allocator Unity.Collections.NativeArray`1::m_AllocatorLabel
-	int32_t ___m_AllocatorLabel_2;
-};
-
-// Unity.Collections.NativeArray`1<UnityEngine.UIElements.UIR.DrawBufferRange>
-struct NativeArray_1_t143552DDF7456B05CFEF10DA16ECCC701C9D0418 
-{
-	// System.Void* Unity.Collections.NativeArray`1::m_Buffer
-	void* ___m_Buffer_0;
-	// System.Int32 Unity.Collections.NativeArray`1::m_Length
-	int32_t ___m_Length_1;
-	// Unity.Collections.Allocator Unity.Collections.NativeArray`1::m_AllocatorLabel
-	int32_t ___m_AllocatorLabel_2;
-};
-
-// Unity.Collections.NativeArray`1<UnityEngine.UIElements.UIR.GfxUpdateBufferRange>
-struct NativeArray_1_t7879B53B71098A407257E3AB6EF30AC53C41005E 
 {
 	// System.Void* Unity.Collections.NativeArray`1::m_Buffer
 	void* ___m_Buffer_0;
@@ -5040,6 +5066,15 @@ struct InvocationContext_t61CA8790B5D5ABADCF9DD4581CE465221C67DDC1_marshaled_com
 	int32_t ___paramCnt_7;
 	int32_t ___hasReturn_8;
 	int32_t ___useRegister_9;
+};
+
+// SimpleJSON.JSONLazyCreator
+struct JSONLazyCreator_t920EEA3C14EC4CD5997502FE53A8D2528E5A880F  : public JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C
+{
+	// SimpleJSON.JSONNode SimpleJSON.JSONLazyCreator::m_Node
+	JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C* ___m_Node_10;
+	// System.String SimpleJSON.JSONLazyCreator::m_Key
+	String_t* ___m_Key_11;
 };
 
 // UnityEngine.UIElements.Length
@@ -20360,6 +20395,46 @@ IL2CPP_EXTERN_C  RuntimeObject* InvocationContext_ReadValueType_TisRuntimeObject
 	_returnValue = InvocationContext_ReadValueType_TisRuntimeObject_m91B9B7A76C149CBFD9A507B3BF917CC1F608932C(_thisAdjusted, method);
 	return _returnValue;
 }
+// T SimpleJSON.JSONLazyCreator::Set<System.Object>(T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* JSONLazyCreator_Set_TisRuntimeObject_m9CF50598C7AAC8EF802359BDDB39EA136B10BDFA_gshared (JSONLazyCreator_t920EEA3C14EC4CD5997502FE53A8D2528E5A880F* __this, RuntimeObject* ___aVal0, const RuntimeMethod* method) 
+{
+	{
+		// if (m_Key == null)
+		String_t* L_0 = (String_t*)__this->___m_Key_11;
+		if (L_0)
+		{
+			goto IL_001b;
+		}
+	}
+	{
+		// m_Node.Add(aVal);
+		JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C* L_1 = (JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C*)__this->___m_Node_10;
+		RuntimeObject* L_2 = ___aVal0;
+		NullCheck(L_1);
+		VirtualActionInvoker1< JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C* >::Invoke(21 /* System.Void SimpleJSON.JSONNode::Add(SimpleJSON.JSONNode) */, L_1, (JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C*)L_2);
+		goto IL_0032;
+	}
+
+IL_001b:
+	{
+		// m_Node.Add(m_Key, aVal);
+		JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C* L_3 = (JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C*)__this->___m_Node_10;
+		String_t* L_4 = (String_t*)__this->___m_Key_11;
+		RuntimeObject* L_5 = ___aVal0;
+		NullCheck(L_3);
+		VirtualActionInvoker2< String_t*, JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C* >::Invoke(20 /* System.Void SimpleJSON.JSONNode::Add(System.String,SimpleJSON.JSONNode) */, L_3, L_4, (JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C*)L_5);
+	}
+
+IL_0032:
+	{
+		// m_Node = null; // Be GC friendly.
+		__this->___m_Node_10 = (JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C*)NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_Node_10), (void*)(JSONNode_tF409930D4FCD8A9B0E7FA2AAAC2F7D133250371C*)NULL);
+		// return aVal;
+		RuntimeObject* L_6 = ___aVal0;
+		return L_6;
+	}
+}
 // T System.Runtime.CompilerServices.JitHelpers::UnsafeCast<System.Object>(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* JitHelpers_UnsafeCast_TisRuntimeObject_m5F16C3EA8BF80F57323D6F2D44F2743F87F9B056_gshared (RuntimeObject* ___o0, const RuntimeMethod* method) 
 {
@@ -33945,66 +34020,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR NativeArray_1_t197AED29D4CF7A6BC8C6C69B7BABD8
 IL_0027:
 	{
 		NativeArray_1_t197AED29D4CF7A6BC8C6C69B7BABD82BDC8475E2 L_5 = V_2;
-		return L_5;
-	}
-}
-// Unity.Collections.NativeArray`1<T> Unity.Collections.LowLevel.Unsafe.NativeArrayUnsafeUtility::ConvertExistingDataToNativeArray<UnityEngine.UIElements.UIR.DrawBufferRange>(System.Void*,System.Int32,Unity.Collections.Allocator)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR NativeArray_1_t143552DDF7456B05CFEF10DA16ECCC701C9D0418 NativeArrayUnsafeUtility_ConvertExistingDataToNativeArray_TisDrawBufferRange_t684F255F5C954760B12F6689F84E78811040C7A4_m90C7DC964BB24F892866C4869B42FACC443EFBFC_gshared (void* ___dataPointer0, int32_t ___length1, int32_t ___allocator2, const RuntimeMethod* method) 
-{
-	NativeArray_1_t143552DDF7456B05CFEF10DA16ECCC701C9D0418 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	NativeArray_1_t143552DDF7456B05CFEF10DA16ECCC701C9D0418 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	NativeArray_1_t143552DDF7456B05CFEF10DA16ECCC701C9D0418 V_2;
-	memset((&V_2), 0, sizeof(V_2));
-	{
-		il2cpp_codegen_initobj((&V_1), sizeof(NativeArray_1_t143552DDF7456B05CFEF10DA16ECCC701C9D0418));
-		void* L_0 = ___dataPointer0;
-		(&V_1)->___m_Buffer_0 = L_0;
-		int32_t L_1 = ___length1;
-		(&V_1)->___m_Length_1 = L_1;
-		int32_t L_2 = ___allocator2;
-		(&V_1)->___m_AllocatorLabel_2 = L_2;
-		NativeArray_1_t143552DDF7456B05CFEF10DA16ECCC701C9D0418 L_3 = V_1;
-		V_0 = L_3;
-		NativeArray_1_t143552DDF7456B05CFEF10DA16ECCC701C9D0418 L_4 = V_0;
-		V_2 = L_4;
-		goto IL_0027;
-	}
-
-IL_0027:
-	{
-		NativeArray_1_t143552DDF7456B05CFEF10DA16ECCC701C9D0418 L_5 = V_2;
-		return L_5;
-	}
-}
-// Unity.Collections.NativeArray`1<T> Unity.Collections.LowLevel.Unsafe.NativeArrayUnsafeUtility::ConvertExistingDataToNativeArray<UnityEngine.UIElements.UIR.GfxUpdateBufferRange>(System.Void*,System.Int32,Unity.Collections.Allocator)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR NativeArray_1_t7879B53B71098A407257E3AB6EF30AC53C41005E NativeArrayUnsafeUtility_ConvertExistingDataToNativeArray_TisGfxUpdateBufferRange_tC47258BCB472B0727B4FCE21A2A53506644C1A97_mBC0B9A7C52BA8216C2641724C684EC534F9D47F6_gshared (void* ___dataPointer0, int32_t ___length1, int32_t ___allocator2, const RuntimeMethod* method) 
-{
-	NativeArray_1_t7879B53B71098A407257E3AB6EF30AC53C41005E V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	NativeArray_1_t7879B53B71098A407257E3AB6EF30AC53C41005E V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	NativeArray_1_t7879B53B71098A407257E3AB6EF30AC53C41005E V_2;
-	memset((&V_2), 0, sizeof(V_2));
-	{
-		il2cpp_codegen_initobj((&V_1), sizeof(NativeArray_1_t7879B53B71098A407257E3AB6EF30AC53C41005E));
-		void* L_0 = ___dataPointer0;
-		(&V_1)->___m_Buffer_0 = L_0;
-		int32_t L_1 = ___length1;
-		(&V_1)->___m_Length_1 = L_1;
-		int32_t L_2 = ___allocator2;
-		(&V_1)->___m_AllocatorLabel_2 = L_2;
-		NativeArray_1_t7879B53B71098A407257E3AB6EF30AC53C41005E L_3 = V_1;
-		V_0 = L_3;
-		NativeArray_1_t7879B53B71098A407257E3AB6EF30AC53C41005E L_4 = V_0;
-		V_2 = L_4;
-		goto IL_0027;
-	}
-
-IL_0027:
-	{
-		NativeArray_1_t7879B53B71098A407257E3AB6EF30AC53C41005E L_5 = V_2;
 		return L_5;
 	}
 }

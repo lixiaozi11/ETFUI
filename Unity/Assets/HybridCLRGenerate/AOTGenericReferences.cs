@@ -392,6 +392,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ObjectHelper.Swap<object>(object&,object&)
 		// string ET.StringHelper.ArrayToString<float>(float[])
 		// object LitJson.JsonMapper.ToObject<object>(string)
+		// string Luban.StringUtil.CollectionToString<int>(System.Collections.Generic.IEnumerable<int>)
 		// System.Void ProtoBuf.Serializer.Serialize<object>(System.IO.Stream,object)
 		// object System.Activator.CreateInstance<object>()
 		// System.Linq.IOrderedEnumerable<System.Collections.Generic.KeyValuePair<object,int>> System.Linq.Enumerable.OrderByDescending<System.Collections.Generic.KeyValuePair<object,int>,int>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<object,int>>,System.Func<System.Collections.Generic.KeyValuePair<object,int>,int>)
@@ -421,5 +422,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// YooAsset.AssetHandle YooAsset.YooAssets.LoadAssetSync<object>(string)
 		// YooAsset.SubAssetsHandle YooAsset.YooAssets.LoadSubAssetsAsync<object>(string,uint)
 		// YooAsset.SubAssetsHandle YooAsset.YooAssets.LoadSubAssetsSync<object>(string)
+		// string string.Join<int>(string,System.Collections.Generic.IEnumerable<int>)
+		// string string.JoinCore<int>(System.Char*,int,System.Collections.Generic.IEnumerable<int>)
 	}
 }

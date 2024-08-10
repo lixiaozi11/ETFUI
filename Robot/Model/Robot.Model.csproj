@@ -38,6 +38,10 @@
             <Link>Module\Config\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
 
+		<Compile Include="..\..\Unity\Assets\ThirdParty\Luban\**\*.cs">
+			<Link>Module\Luban\%(RecursiveDir)%(FileName)%(Extension)</Link>
+		</Compile>
+
         <Compile Include="..\..\Unity\Codes\Model\Core\**\*.cs">
             <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
@@ -94,14 +98,14 @@
             <Link>Demo\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
 
-        <Compile Include="..\..\Server\Model\Generate\**\*.cs">
-            <Link>Generate\%(RecursiveDir)%(FileName)%(Extension)</Link>
-        </Compile>
-
         <Compile Include="..\..\Server\Model\Module\Actor\**\*.cs">
             <Link>Module\Actor\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
 
+		<Compile Include="..\..\Server\Model\Generate\**\*.cs">
+			<Link>Generate\%(RecursiveDir)%(FileName)%(Extension)</Link>
+		</Compile>
+		
         <Compile Include="..\..\Unity\Codes\Model\Module\Actor\**\*.cs">
             <Link>Module\Actor\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>

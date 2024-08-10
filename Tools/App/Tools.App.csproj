@@ -44,7 +44,11 @@
         <Compile Include="..\..\Unity\Codes\Model\Module\Config\**\*.cs">
             <Link>Module\Config\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
-
+		
+		<Compile Include="..\..\Unity\Assets\ThirdParty\Luban\**\*.cs">
+			<Link>Module\Luban\%(RecursiveDir)%(FileName)%(Extension)</Link>
+		</Compile>
+		
         <Compile Include="..\..\Unity\Codes\Model\Module\Message\OpcodeRangeDefine.cs">
             <Link>Module\Message\OpcodeRangeDefine.cs</Link>
         </Compile>

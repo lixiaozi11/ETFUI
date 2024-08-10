@@ -487,7 +487,7 @@ namespace ET
             //GameObject go                      = ResourcesComponent.Instance.GetAsset(value.StringToAB(), value ) as GameObject;
             GameObject go = YooAssetHandleComponent.Instance.LoadGameObject(value);
 
-            baseWindow.UIPrefabGameObject      = UnityEngine.Object.Instantiate(go);
+            baseWindow.UIPrefabGameObject      = go;
             baseWindow.UIPrefabGameObject.name = go.name;
             
             UIEventComponent.Instance.GetUIEventHandler(baseWindow.WindowID).OnInitWindowCoreData(baseWindow);
@@ -518,7 +518,7 @@ namespace ET
             GameObject go = await YooAssetHandleComponent.Instance.LoadGameObjectAsync(value);
 
 
-            baseWindow.UIPrefabGameObject      = UnityEngine.Object.Instantiate(go);
+            baseWindow.UIPrefabGameObject      = go;
             baseWindow.UIPrefabGameObject.name = go.name;
             
             UIEventComponent.Instance.GetUIEventHandler(baseWindow.WindowID).OnInitWindowCoreData(baseWindow);

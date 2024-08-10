@@ -1,3 +1,4 @@
+using Luban;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -27,9 +28,9 @@ namespace ET
 	{
 		public static void LoadOneConfig(this ConfigComponent self, Type configType)
 		{
-			byte[] oneConfigBytes = self.ConfigLoader.GetOneConfigBytes(configType.FullName);
+            ByteBuf oneConfigBytes = self.ConfigLoader.GetOneConfigBytes(configType.FullName);
 
-			object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
+			object category = Activator.CreateInstance(configType, oneConfigBytes);
 
 			self.AllConfig[configType] = category;
 		}
@@ -39,7 +40,7 @@ namespace ET
 			self.AllConfig.Clear();
 			List<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
 			
-			Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();
+			Dictionary<string, ByteBuf> configBytes = new Dictionary<string, ByteBuf>();
 			self.ConfigLoader.GetAllConfigBytes(configBytes);
 
 			foreach (Type type in types)
@@ -53,7 +54,7 @@ namespace ET
 			self.AllConfig.Clear();
 			List<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
 			
-			Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();
+			Dictionary<string, ByteBuf> configBytes = new Dictionary<string,ByteBuf>();
 			self.ConfigLoader.GetAllConfigBytes(configBytes);
 
 			using (ListComponent<Task> listTasks = ListComponent<Task>.Create())
@@ -67,14 +68,14 @@ namespace ET
 				await Task.WhenAll(listTasks.ToArray());
 			}
 		}
-
-		private static void LoadOneInThread(this ConfigComponent self, Type configType, Dictionary<string, byte[]> configBytes)
+        //改成使用buf类，其余的不变。在加载比特流的地方转换成buf类，AllConfig存储的object类型不用改变
+        private static void LoadOneInThread(this ConfigComponent self, Type configType, Dictionary<string, ByteBuf> configBytes)
 		{
-			byte[] oneConfigBytes = configBytes[configType.Name];
+            ByteBuf oneConfigBytes = configBytes[configType.Name];
 
-			object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
-
-			lock (self)
+			object category = Activator.CreateInstance(configType, oneConfigBytes);
+           
+            lock (self)
 			{
 				self.AllConfig[configType] = category;
 			}

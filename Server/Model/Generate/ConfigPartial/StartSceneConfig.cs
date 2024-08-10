@@ -26,9 +26,9 @@ namespace ET
             return this.ZoneScenesByName[zone][name];
         }
         
-        public override void AfterEndInit()
+        partial void AfterEndInit()
         {
-            foreach (StartSceneConfig startSceneConfig in this.GetAll().Values)
+            foreach (StartSceneConfig startSceneConfig in this.Dict.Values)
             {
                 this.ProcessScenes.Add(startSceneConfig.Process, startSceneConfig);
                 
@@ -54,7 +54,7 @@ namespace ET
         }
     }
     
-    public partial class StartSceneConfig: ISupportInitialize
+    public partial class StartSceneConfig
     {
         public long InstanceId;
         
@@ -108,11 +108,8 @@ namespace ET
             }
         }
 
-        public override void BeginInit()
-        {
-        }
 
-        public override void EndInit()
+        public override void AfterEndInit()
         {
             this.Type = EnumHelper.FromString<SceneType>(this.SceneType);
             InstanceIdStruct instanceIdStruct = new InstanceIdStruct(this.Process, (uint) this.Id);

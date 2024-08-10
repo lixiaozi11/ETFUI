@@ -71,6 +71,9 @@
     <type fullname="ET.ETTask`1" preserve="all" />
     <type fullname="ET.Recast" preserve="all" />
     <type fullname="LitJson.JsonMapper" preserve="all" />
+    <type fullname="Luban.BeanBase" preserve="all" />
+    <type fullname="Luban.ByteBuf" preserve="all" />
+    <type fullname="Luban.StringUtil" preserve="all" />
     <type fullname="ProtoBuf.Meta.RuntimeTypeModel" preserve="all" />
     <type fullname="ProtoBuf.Meta.TypeModel" preserve="all" />
     <type fullname="ProtoBuf.ProtoContractAttribute" preserve="all" />
