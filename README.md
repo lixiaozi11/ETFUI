@@ -21,7 +21,8 @@
 
 # YooAsset 2.2
 1.  在\Unity\Assets\Mono\YooAsset\下的YooAssetResComponent中对YooAsset进行初始化操作。在YooAssetHelper中用 ETTask 对 YooAsset 的异步操作做了扩展。
-2.  在\Unity\Codes\HotfixView\Module\YooAsset 中使用YooAsset的资源更新，加载，卸载相关接口。
+2.  在\Unity\Codes\HotfixView\Module\YooAsset 中使用YooAsset的资源更新，加载，卸载相关接口。注意资源热更使用ScriptableObject作为版本信息，需要修改。参考GlobalConfig.cs
+
 # HybridCLR
 1.  UIPropTips系统
 2.  切换控制器系统
